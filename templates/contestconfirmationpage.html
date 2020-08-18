@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <script>
+
+      document.addEventListener('DOMContentLoaded', () => {
+
+        $("#myModal").modal('show');
+
+
+      })
+    </script>
+  </head>
+  <body>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Are You Sure You Would Like to Begin?</h5>
+      </div>
+      <div class="modal-body">
+        <p>You will not be able to close the window or go back after starting the test. The timer will start immediately.</p>
+      </div>
+      <div class="modal-footer">
+      <a class="btn btn-secondary" href="{{ url_for('index') }}"> Go Back</a>
+      <form method="post" action="/contest/{{ contestnumber }}" class="inline">
+        <input type="hidden" name="extra_submit_param" value="extra_submit_value">
+        <button class="btn btn-primary" type="submit" name="submit_param" value="submit_value" class="link-button">I Understand</button>
+</form>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
+<!--
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Example of Auto Loading Bootstrap Modal on Page Load</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$("#staticBackdrop").modal('show');
+	});
+</script>
+</head>
+<body>
+  <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Are You Sure You Want to Begin?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          You will not be able to go back or close the tab while taking the test. The timer will start immediately.
+        </div>
+        <div class="modal-footer">
+          <button href="/contests" type="button" class="btn btn-secondary col">Close</button>
+          <form action="/contest/{{ contestnumber }}" method="post">
+              <input class="btn btn-primary col" type="submit" name="I Understand" value="Upvote" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+-->

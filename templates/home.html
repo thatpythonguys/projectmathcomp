@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>ThatPythonGuys</title>
+    <link rel="stylesheet" href="../static/styles.css">
+
+
+<style media="screen">
+  .rgba-gradient {
+  background: -moz-linear-gradient(45deg, rgba(42, 27, 161, 0.7), rgba(29, 210, 177, 0.7) 100%);
+  background: -webkit-linear-gradient(45deg, rgba(42, 27, 161, 0.7), rgba(29, 210, 177, 0.7) 100%);
+  background: -webkit-gradient(linear, 45deg, from(rgba(42, 27, 161, 0.7)), to(rgba(29, 210, 177, 0.7)));
+  background: -o-linear-gradient(45deg, rgba(42, 27, 161, 0.7), rgba(29, 210, 177, 0.7) 100%);
+  background: linear-gradient(to 45deg, rgba(42, 27, 161, 0.7), rgba(29, 210, 177, 0.7) 100%);
+
+  .no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  > .col,
+  > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+}
+</style>
+  </head>
+
+<body>
+
+<div class="container-fluid">
+
+
+<nav class="navbar navbar-expand-md navbar-light">
+    <a href="{{ url_for('index') }}" class="navbar-brand" style="color: black; font-size: 36px;">ThatPythonGuys</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar6">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse justify-content-stretch" id="navbar6">
+        <ul class="mx-auto navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link active" style="font-size:19px;" href="{{ url_for('contests') }}">Live Contests<span class="sr-only">Live Contests</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link active navbar-header-link" href="{{ url_for('guides') }}">Guides<span class="sr-only">Guides</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link active navbar-header-link" href="{{ url_for('forums') }}">Forums <span class="sr-only">Forums</span></a>
+            </li>
+        </ul>
+        {% if "username" in session %}
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class=" nav-link disabled" style=" font-size: 18px; color:red;" href="#">{{ session["username"] }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" style="font-size:19px;" href="{{ url_for('logout') }}">Logout</a>
+            </li>
+        </ul>
+        {% else %}
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+              <a class="nav-link active" style="font-size:19px;" href="{{ url_for('login') }}">Login</a>
+          </li>
+        </ul>
+        {% endif %}
+    </div>
+</nav>
+</div>
+
+<!-- Full Page Intro -->
+<div class="view" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+  <!-- Mask & flexbox options-->
+  <div class="mask rgba-gradient align-items-center">
+    <!-- Content -->
+    <div class="container">
+      <!--Grid row-->
+      <div class="row">
+        <!--Grid column-->
+        <div class="col-md-6 white-text text-center text-md-left mt-xl-5 mb-5" data-wow-delay="0.3s">
+          <h1 class="h1-responsive font-weight-bold mt-sm-5" style="color: white;">The Home for Online Math Contests</h1>
+          <hr class="hr-light">
+          <h6 class="mb-4" style="color: white;" >Welcome to the ThatPythonGuys Home for Stuff. You'll find basically no content here since we're too lazy to make any.</h6>
+          <a class=" ml-5 btn btn-white" style="color: white;"> <strong>About</strong></a>
+          <a class=" ml-5 btn btn-outline-white" style="color: white;"><strong>Contact</strong></a>
+        </div>
+        <!--Grid column-->
+        <!--Grid column-->
+        <div class="col-md-6 col-xl-5 mt-xl-5 wow fadeInRight" data-wow-delay="0.3s">
+          <img src="../static/mathsymbols3.png" alt="" class="img-fluid mb-5 mt-5" style="height:500px">
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </div>
+    <!-- Content -->
+  </div>
+  <!-- Mask & flexbox options-->
+</div>
+<!-- Full Page Intro -->
+
+<footer class="page-footer font-small grey">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a> Not really but kinda Riju Dey</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+</body>
+
+</html>

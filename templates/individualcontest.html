@@ -1,0 +1,274 @@
+{% extends "layout.html" %}
+{% block title %}
+<script src="../static/individualcontest.js"></script>
+<title> Contest {{ contestnumber }}</title>
+{% endblock %}
+
+{% block body %}
+<nav class="navbar fixed-top">
+  <ul class="navbar-nav ml-auto mr-3">
+    <li class="nav-item">
+      <div class="alert alert-dark">
+        <h2 id="demo"></h2>
+      </div>
+
+    </li>
+  </ul>
+
+</nav>
+<h2 class="mt-5"> Contest 1</h2>
+<form class="" action="{{ url_for('answersuccess') }}" method="post">
+  <div class="form-group">
+    <p>This is the First Contest. You have 75 minutes to complete the following 25 questions. There are 20 multiple choice questions, followed by 5 short answer questions. There is not penalty for guessing. Good Luck.</p>
+
+<h3>Multiple Choice Questions.</h3>
+<hr>
+<p>1. <strong>Which one of these is a perfect square?</strong></p>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q1" id="q1" value="A">
+  <label class="form-check-label">(A) 9</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q1" id="q1" value="B">
+  <label class="form-check-label" >(B) 16</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q1" id="inlineRadio3" value="C">
+  <label class="form-check-label" >(C) 25</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q1" id="inlineRadio3" value="D">
+  <label class="form-check-label">(D) 36</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q1" id="inlineRadio3" value="E">
+  <label class="form-check-label">(E) 49</label>
+</div>
+
+<p>2. <strong>Which one of these is a perfect square?</strong></p>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q2" id="inlineRadio1" value="A">
+  <label class="form-check-label">(A) 9</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q2" id="inlineRadio2" value="B">
+  <label class="form-check-label">(B) 16</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q2" id="inlineRadio3" value="C">
+  <label class="form-check-label" >(C) 25</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q2" id="inlineRadio3" value="D">
+  <label class="form-check-label" >(D) 36</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q2" id="inlineRadio3" value="E">
+  <label class="form-check-label" >(E) 49</label>
+
+</div><p>3. <strong>Which one of these is a perfect square?</strong></p>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q3" id="inlineRadio1" value="A">
+  <label class="form-check-label" >(A) 9</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q3" id="inlineRadio2" value="B">
+  <label class="form-check-label" >(B) 16</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q3" id="inlineRadio3" value="C">
+  <label class="form-check-label" >(C) 25</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q3" id="inlineRadio3" value="D">
+  <label class="form-check-label" >(D) 36</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q3" id="inlineRadio3" value="E">
+  <label class="form-check-label" >(E) 49</label>
+
+</div><p>4. <strong>Which one of these is a perfect square?</strong></p>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q4" id="inlineRadio1" value="A">
+  <label class="form-check-label" >(A) 9</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q4" id="inlineRadio2" value="B">
+  <label class="form-check-label" >(B) 16</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q4" id="inlineRadio3" value="C">
+  <label class="form-check-label" >(C) 25</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q4" id="inlineRadio3" value="D">
+  <label class="form-check-label" >(D) 36</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q4" id="inlineRadio3" value="E">
+  <label class="form-check-label" >(E) 49</label>
+
+</div><p>5. <strong>Which one of these is a perfect square?</strong></p>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q5" id="inlineRadio1" value="A">
+  <label class="form-check-label" >(A) 9</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q5" id="inlineRadio2" value="B">
+  <label class="form-check-label" >(B) 16</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q5" id="inlineRadio3" value="C">
+  <label class="form-check-label" >(C) 25</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q5" id="inlineRadio3" value="D">
+  <label class="form-check-label" >(D) 36</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q5" id="inlineRadio3" value="E">
+  <label class="form-check-label" >(E) 49</label>
+
+</div><p>6. <strong>Which one of these is a perfect square?</strong></p>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q6" id="inlineRadio1" value="A">
+  <label class="form-check-label" >(A) 9</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q6" id="inlineRadio2" value="B">
+  <label class="form-check-label" >(B) 16</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q6" id="inlineRadio3" value="C">
+  <label class="form-check-label" >(C) 25</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q6" id="inlineRadio3" value="D">
+  <label class="form-check-label" >(D) 36</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q6" id="inlineRadio3" value="E">
+  <label class="form-check-label" >(E) 49</label>
+
+</div><p>7. <strong>Which one of these is a perfect square?</strong></p>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q7" id="inlineRadio1" value="A">
+  <label class="form-check-label" >(A) 9</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q7" id="inlineRadio2" value="B">
+  <label class="form-check-label" >(B) 16</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q7" id="inlineRadio3" value="C">
+  <label class="form-check-label" >(C) 25</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q7" id="inlineRadio3" value="D">
+  <label class="form-check-label" >(D) 36</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q7" id="inlineRadio3" value="E">
+  <label class="form-check-label" >(E) 49</label>
+
+</div><p>8. <strong>Which one of these is a perfect square?</strong></p>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q8" id="inlineRadio1" value="A">
+  <label class="form-check-label" >(A) 9</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q8" id="inlineRadio2" value="B">
+  <label class="form-check-label" >(B) 16</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q8" id="inlineRadio3" value="C">
+  <label class="form-check-label" >(C) 25</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q8" id="inlineRadio3" value="D">
+  <label class="form-check-label" >(D) 36</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q8" id="inlineRadio3" value="E">
+  <label class="form-check-label" >(E) 49</label>
+
+</div><p>9. <strong>Which one of these is a perfect square?</strong></p>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q9" id="inlineRadio1" value="A">
+  <label class="form-check-label" >(A) 9</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q9" id="inlineRadio2" value="B">
+  <label class="form-check-label" >(B) 16</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q9" id="inlineRadio3" value="C">
+  <label class="form-check-label" >(C) 25</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q9" id="inlineRadio3" value="D">
+  <label class="form-check-label" >(D) 36</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q9" id="inlineRadio3" value="E">
+  <label class="form-check-label" >(E) 49</label>
+
+</div><p>10. <strong>Which one of these is a perfect square?</strong></p>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q10" id="inlineRadio1" value="A">
+  <label class="form-check-label" >(A) 9</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q10" id="inlineRadio2" value="B">
+  <label class="form-check-label" >(B) 16</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q10" id="inlineRadio3" value="C">
+  <label class="form-check-label" >(C) 25</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q10" id="inlineRadio3" value="D">
+  <label class="form-check-label" >(D) 36</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="q10" id="inlineRadio3" value="E">
+  <label class="form-check-label" >(E) 49</label>
+</div>
+<hr>
+<h3>Short Answer Questions</h3>
+<p>1. <strong>What is 1+1?</strong></p>
+<div class="form-group col-1">
+  <label>Ans:</label>
+  <input name = "q11" type="text" class="form-control">
+</div>
+<p>2. <strong>What is 1+1?</strong></p>
+<div class="form-group col-1">
+  <label>Ans:</label>
+  <input name = "q12" type="text" class="form-control">
+</div>
+<p>3. <strong>What is 1+1?</strong></p>
+<div class="form-group col-1">
+  <label>Ans:</label>
+  <input name = "q13" type="text" class="form-control">
+</div>
+<p>4. <strong>What is 1+1?</strong></p>
+<div class="form-group col-1">
+  <label>Ans:</label>
+  <input  name = "q14" type="text" class="form-control">
+</div>
+<p>5. <strong>What is 1+1?</strong></p>
+<div class="form-group col-1 mb-3">
+  <label>Ans:</label>
+  <input name = "q15" type="text" class="form-control">
+</div>
+<input type="submit" id="submit" name="Submit Answers" value="Submit Answers" class="btn btn-primary btn-lg btn-block">
+<small>Make sure to check all your answers before submitting!</small>
+<div class="mb-3"></div>
+
+
+
+
+  </div>
+
+</form>
+{% endblock %}
